@@ -1,0 +1,8 @@
+__pycache__/
+.venv/
+*.sqlite3*
+.env
+.env.*
+!.env.example
+config.local.json
+/project_page/.openai/hosting.json

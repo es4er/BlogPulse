@@ -1,0 +1,18 @@
+{
+  "interval_seconds": 600,
+  "sources": {
+    "lilian": {"name": "Lilian Weng · Lil’Log", "url": "https://lilianweng.github.io/index.xml"},
+    "kexue": {"name": "苏剑林 · 科学空间", "url": "https://kexue.fm/feed/"},
+    "anthropic": {"name": "Anthropic Engineering", "url": "https://www.anthropic.com/engineering", "selector": "main a[href^='/engineering/'], main a[href^='/research/']"},
+    "openai": {"name": "OpenAI News", "url": "https://openai.com/news/rss.xml"},
+    "cursor": {"name": "Cursor Blog", "url": "https://cursor.com/blog", "selector": "a.blog-directory__row[href^='/blog/']", "title_selector": "p"},
+    "latent": {"name": "Latent Space", "url": "https://www.latent.space/feed"},
+    "hackernews": {"name": "Hacker News · 首页", "url": "https://news.ycombinator.com/rss", "links_only": true},
+    "tml": {"name": "Thinking Machines Lab · Connectionism", "url": "https://thinkingmachines.ai/blog/", "selector": "main a[href^='/blog/']:has(h2)", "title_selector": "h2"},
+    "langchain": {"name": "LangChain Blog", "url": "https://www.langchain.com/blog/rss.xml"},
+    "lmsys": {"name": "LMSYS Org", "url": "https://www.lmsys.org/", "selector": "a[href^='/blog/']:has(h3)", "title_selector": "h3"}
+  },
+  "subscriptions": {
+    "local": {"sources": ["lilian", "kexue", "anthropic", "openai", "cursor", "latent", "hackernews", "tml", "langchain", "lmsys"], "channel": "console"}
+  }
+}
