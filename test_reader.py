@@ -38,6 +38,9 @@ class ReaderTests(unittest.TestCase):
             self.assertEqual(requests.get(self.base + asset).status_code, 200, asset)
         self.assertIn('data-mode="local"', requests.get(self.base + 'reader.html').text)
         self.assertIn('data-mode="demo"', requests.get(self.base + 'reader.html?demo=1').text)
+        self.assertIn('data-mode="local"', requests.get(self.base + 'library.html').text)
+        self.assertIn('data-mode="demo"', requests.get(self.base + 'library.html?demo=1').text)
+        self.assertIn('application/javascript', requests.get(self.base + 'notebook.mjs').headers['Content-Type'])
         self.assertEqual(requests.get(self.base + 'config.json').status_code, 404)
 
     def test_archive_api(self):

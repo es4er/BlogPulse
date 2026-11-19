@@ -1,0 +1,15 @@
+{
+  "id": "./reader.html",
+  "name": "BlogPulse · 随身阅读台",
+  "short_name": "BlogPulse",
+  "lang": "zh-CN",
+  "start_url": "./reader.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#101119",
+  "theme_color": "#101119",
+  "icons": [
+    {"src":"./icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"./icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}

@@ -12,6 +12,11 @@ FILES = {'index.html': 'text/html', 'reader.html': 'text/html', 'station.css': '
          'station.js': 'application/javascript', 'reader.js': 'application/javascript',
          'observatory.svg': 'image/svg+xml', 'mark.svg': 'image/svg+xml', 'catalog.js': 'application/javascript'}
 PAGE_SIZE = 18
+FILES.update({'library.html': 'text/html', 'library.js': 'application/javascript',
+              'notebook.mjs': 'application/javascript', 'notebook.css': 'text/css'})
+FILES.update({'app.webmanifest': 'application/manifest+json', 'sw.js': 'application/javascript',
+              'mobile.mjs': 'application/javascript', 'mobile.css': 'text/css',
+              'edition.json': 'application/json', **{f'icon-{size}.png': 'image/png' for size in (180, 192, 512)}})
 
 
 def catalog(db, sources, source='', query='', page=1):
@@ -59,7 +64,7 @@ class ReaderHandler(BaseHTTPRequestHandler):
                 return self.send_error(404)
             mime = FILES[name]
             data = (ASSETS / name).read_bytes()
-            if name == 'reader.html' and 'demo' not in parse_qs(parts.query, keep_blank_values=True):
+            if name in ('reader.html', 'library.html') and 'demo' not in parse_qs(parts.query, keep_blank_values=True):
                 data = data.replace(b'data-mode="demo"', b'data-mode="local"')
         self.send_response(200)
         self.send_header('Content-Type', mime + '; charset=utf-8')

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN" data-mode="demo"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#101119">
+<title>我的知识库 · BlogPulse</title><link rel="icon" href="./mark.svg"><link rel="stylesheet" href="./station.css"><link rel="stylesheet" href="./notebook.css"><link rel="stylesheet" href="./mobile.css"><link rel="manifest" href="./app.webmanifest" crossorigin="use-credentials"><link rel="apple-touch-icon" href="./icon-180.png"><meta name="apple-mobile-web-app-capable" content="yes"><script type="module" src="./library.js"></script>
+</head><body><a class="skip" href="#cards">跳至知识卡片</a>
+<header><div class="shell nav"><a class="brand" href="./index.html"><img src="./mark.svg" alt="">BlogPulse</a><nav><a href="./index.html">项目主页</a><a data-reader class="nav-cta" href="./reader.html">返回阅读台</a></nav></div></header>
+<main class="shell reader">
+  <div class="reader-title"><div><span class="eyebrow"><span class="dash"></span> FIELD NOTES</span><h1>我的知识库</h1><p>留下值得再读的文章，用自己的话写下它为什么重要。</p></div><span class="mode-badge" id="scope">浏览器私藏</span></div>
+  <div class="desk"><aside><span class="eyebrow">TOPICS</span><h2>我的主题</h2><div id="topics" role="group" aria-label="按标签筛选"></div>
+    <details class="portability"><summary>备份与导出</summary><p>笔记只存在当前浏览器。清理数据或换设备前请备份。</p><button id="backup">备份 JSON</button><button id="restore">导入 JSON</button><input type="file" id="file" accept=".json,application/json" hidden><button id="markdown">导出 Markdown</button><small>导出全部卡片；导入只补充新卡片，不覆盖已有笔记。</small></details>
+  </aside><section class="inbox"><div class="tools"><label><span aria-hidden="true">⌕</span><input type="search" id="query" placeholder="搜索标题、摘要、笔记、标签…" aria-label="搜索知识卡片"></label></div>
+  <div class="stages" aria-label="整理状态" role="group"><button data-stage="" aria-pressed="true">全部</button><button data-stage="inbox" aria-pressed="false">待整理</button><button data-stage="written" aria-pressed="false">已写笔记</button></div>
+  <div class="results-head"><h2>知识卡片</h2><span id="count" aria-live="polite"></span></div><div id="cards"></div><button id="more" hidden>显示更多</button></section></div>
+  <p id="status" role="status" class="shelf-status"></p>
+</main>
+<dialog id="editor" aria-labelledby="card-title"><form id="form">
+  <div class="edit-head"><span class="eyebrow">FIELD NOTE</span><button type="button" id="close">关闭</button></div>
+  <h2 id="card-title"></h2><a id="original" target="_blank" rel="noopener noreferrer"></a><details class="digest"><summary>查看收藏时的文章材料</summary><p id="digest"></p></details>
+  <label for="note">我的理解</label><textarea id="note" rows="6" maxlength="30000" placeholder="这篇文章改变了我的哪个判断？有什么做法值得试一试？"></textarea>
+  <label for="tags">主题标签</label><input id="tags" placeholder="例如：智能体，模型评估">
+  <small>用逗号分隔；相同标签会关联相关卡片。</small>
+  <div id="related"></div><p id="edit-status" role="status"></p>
+  <div class="edit-actions"><button type="button" id="remove">移出知识库</button><button class="button primary" id="save" type="submit">保存笔记</button></div>
+</form></dialog>
+</body></html>
